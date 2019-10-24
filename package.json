@@ -1,6 +1,6 @@
 {
   "name": "fff-table",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target wc --name fff-components src/components/*.vue",
@@ -55,9 +55,6 @@
     "> 1%",
     "last 2 versions"
   ],
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "lint-staged": {
     "*.{js,vue}": [
       "vue-cli-service lint",

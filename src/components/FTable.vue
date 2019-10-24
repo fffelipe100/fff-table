@@ -14,9 +14,15 @@
               class="custom-select custom-select-sm form-control form-control-sm mt-2"
               v-model="entrada"
             >
-              <option v-for="option in options" :key="option.id" :value="option.value">
+              <option
+                v-for="option in options"
+                :key="option.id"
+                :value="option.value"
+              >
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">{{option.text}}</font>
+                  <font style="vertical-align: inherit;">{{
+                    option.text
+                  }}</font>
                 </font>
               </option>
             </select>
@@ -45,7 +51,7 @@
                 :key="column.id"
                 class="m-3"
               >
-                <label for="form1">{{column.name}}</label>
+                <label for="form1">{{ column.name }}</label>
                 <input :id="column.id" type="text" class="form-control" />
               </div>
 
@@ -54,12 +60,16 @@
                   class="form-control-sm btn btn-md btn-outline-danger p-2 float-right"
                   type="button"
                   @click="clean"
-                >Limpar</button>
+                >
+                  Limpar
+                </button>
                 <button
                   class="form-control-sm btn btn-md btn-outline-primary p-2 float-right"
                   type="button"
                   @click="filters"
-                >BUSCAR</button>
+                >
+                  BUSCAR
+                </button>
               </div>
             </div>
           </div>
@@ -85,9 +95,15 @@
       </div>
       <!--Paginação-->
       <div class="col-sm-4 col-md-3 mt-4">
-        <div class="dataTables_paginate paging_simple_numbers" id="dtBasicExample_paginate">
+        <div
+          class="dataTables_paginate paging_simple_numbers"
+          id="dtBasicExample_paginate"
+        >
           <ul class="pagination">
-            <li class="paginate_button page-item previous" id="dtBasicExample_previous">
+            <li
+              class="paginate_button page-item previous"
+              id="dtBasicExample_previous"
+            >
               <a
                 aria-controls="dtBasicExample"
                 data-dt-idx="0"
@@ -138,27 +154,39 @@
                 :key="column.id"
                 v-show="column.visible_column"
                 class="th-sm"
-              >{{column.name}}</th>
+              >
+                {{ column.name }}
+              </th>
               <th class="th-sm">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item,index) in sofier.data" :key="index">
+            <tr v-for="(item, index) in sofier.data" :key="index">
               <th
                 v-show="column.visible_column"
                 v-for="column in columns"
                 :key="column.id"
                 class="th-sm"
-              >{{getvalues(item, column.id, column.render)|format}}</th>
+              >
+                {{ getvalues(item, column.id, column.render) | format }}
+              </th>
               <th class="th-sm display-icon">
                 <div class="text-center">
                   <a v-show="view_edit" @click="edit(index)" class="mr-2 p-1">
                     <i class="fas fa-address-card"></i>
                   </a>
-                  <a v-show="view_detail" @click="detail(index)" class="ml-1 mr-2">
+                  <a
+                    v-show="view_detail"
+                    @click="detail(index)"
+                    class="ml-1 mr-2"
+                  >
                     <i class="fas fa-history"></i>
                   </a>
-                  <a v-show="view_excluir" @click="excluir(index)" class="mr-2 p-1">
+                  <a
+                    v-show="view_excluir"
+                    @click="excluir(index)"
+                    class="mr-2 p-1"
+                  >
                     <i class="fas fa-trash-alt"></i>
                   </a>
                 </div>
@@ -178,7 +206,9 @@
           aria-live="polite"
         >
           <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">Mostrando {{sofier.total}} tarefas</font>
+            <font style="vertical-align: inherit;"
+              >Mostrando {{ sofier.total }} tarefas</font
+            >
           </font>
         </div>
       </div>
@@ -374,4 +404,3 @@ export default {
   border: 0px solid #f4f4f4;
 }
 </style>
-
