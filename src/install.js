@@ -1,7 +1,7 @@
-import * as components from "./components";
+import FTable from "./components/FTable";
 
 const install = (Vue, options = {}) => {
-  Vue.component("fffTable", component);
+  Vue.component("FTable", FTable);
 };
 
 // auto install
