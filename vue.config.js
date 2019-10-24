@@ -1,3 +1,11 @@
+const webpack = require("webpack");
+
 module.exports = {
-  lintOnSave: false
+  productionSourceMap: false,
+  configureWebpack: {
+    output: {
+      libraryExport: "default",
+      globalObject: "typeof self !== 'undefined' ? self : this"
+    }
+  }
 };
